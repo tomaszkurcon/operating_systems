@@ -17,7 +17,7 @@ client_shared : main.c
 client_dynamic : main.c
 	mkdir -p $(BUILD_DIR)
 	make -C collatz collatz_shared.o
-	$(CC) $(CFLAGS) -D DYNAMIC -o $(BUILD_DIR)/$@ $< -L$(LIB_DIR)/collatz -lcollatz_shared -Wl,-rpath=./build/lib/collatz
+	$(CC) $(CFLAGS) -D DYNAMIC -o $(BUILD_DIR)/$@ $< -Wl,-rpath=./build/lib/collatz
 
 run_client_static :
 	make client_static
@@ -30,4 +30,4 @@ run_client_dynamic :
 	./$(BUILD_DIR)/client_dynamic $(ARGS)
 clean :
 	-rm -rf $(BUILD_DIR)
-.PHONY : all client_static clean
+.PHONY : all  clean

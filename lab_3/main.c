@@ -50,6 +50,7 @@ void flipper(const char* in_path, const char* out_path) {
             fputs(line, new_file);
         }
         fclose(ptr);
+        fclose(new_file);
     }
     closedir(pDir);
 }

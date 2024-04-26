@@ -9,5 +9,5 @@ countdown : countdown.c
 clean :
 	-rm countdown
 
-.PHONY : all countdown clean
+.PHONY : all clean
 
